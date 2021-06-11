@@ -1,0 +1,177 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style type="text/css">
+
+    TABLE {
+        border-collapse: collapse; 
+        margin: auto;
+    }
+
+    TD, TH {
+        padding: 3px; 
+        border: 1px solid; 
+        text-align: center;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4">Расписание для группы ИС9-5</h1>
+</div>
+        <table>
+            <tr>
+                <td>Предмет</td>
+                <td>Преподаватель</td>
+                <td>Кабинет</td>
+                <td>Время начала</td>
+            </tr>
+            <tr>
+                <td colspan="4">Понедельник 21.06.2021</td>
+            </tr>
+            <tr>
+                <td>Элементы высшей математики</td>
+                <td>Кононова М.П.</td>
+                <td>39</td>
+                <td>11:00</td>
+            </tr>
+            <tr>
+                <td>Оэд</td>
+                <td>Олейников Д.Ю., Тарасова О.Н.</td>
+                <td>36/37</td>
+                <td>12:25</td>
+            </tr>
+            <tr>
+                <td>Компьютерная графика</td>
+                <td>Карась Ю.А.</td>
+                <td>36/37</td>
+                <td>14:00</td>
+            </tr>
+            <tr>
+                <td>Компьютерная Графика</td>
+                <td>Карась Ю.А.</td>
+                <td>36/37</td>
+                <td>15:25</td>
+            </tr>
+            <tr>
+                <td colspan="4">Вторник 22.06.2021</td>
+            </tr>
+            <tr>
+                <td>Основы философии</td>
+                <td>Пичугин А.Н.</td>
+                <td>25</td>
+                <td>11:00</td>
+            </tr>
+            <tr>
+                <td>Мдк 02.01</td>
+                <td>Кучеренко Я.А., Олейников Д.Ю.</td>
+                <td>45/47</td>
+                <td>12:25</td>
+            </tr>
+            <tr>
+                <td>Мдк 02.01</td>
+                <td>Кучеренко Я.А., Олейников Д.Ю.</td>
+                <td>45/47</td>
+                <td>14:00</td>
+            </tr>
+            <tr>
+                <td>Мдк 02.01</td>
+                <td>Кучеренко Я.А., Олейников Д.Ю</td>
+                <td>45/47</td>
+                <td>15:25</td>
+            </tr>
+            <tr>
+                <td colspan="4">Среда 23.06.2021</td>
+            </tr>
+            <tr>
+                <td>Иностранный язык</td>
+                <td>Лашевич Ю.И.</td>
+                <td>12</td>
+                <td>11:00</td>
+            </tr>
+            <tr>
+                <td>Основы философии</td>
+                <td>Пичугин А.Н.</td>
+                <td>25</td>
+                <td>12:25</td>
+            </tr>
+            <tr>
+                <td>Оэд</td>
+                <td>Олейников Д.Ю., Тарасова О.Н.</td>
+                <td>36/37</td>
+                <td>14:00</td>
+            </tr>
+            <tr>
+                <td>Оэд</td>
+                <td>Олейников Д.Ю., Тарасова О.Н.</td>
+                <td>36/37</td>
+                <td>15:25</td>
+            </tr>
+            <tr>
+                <td colspan="4">Четверг 24.06.2021</td>
+            </tr>
+            <tr>
+                <td>Экономика организации</td>
+                <td>Емелина Т.Л.</td>
+                <td>39</td>
+                <td>11:00</td>
+            </tr>
+            <tr>
+                <td>Мдк 02.01</td>
+                <td>Кучеренко Я.А., Олейников Д.Ю.</td>
+                <td>45/47</td>
+                <td>12:25</td>
+            </tr>
+            <tr>
+                <td>Мдк 02.01</td>
+                <td>Кучеренко Я.А., Олейников Д.Ю.</td>
+                <td>45/47</td>
+                <td>14:00</td>
+            </tr>
+            <tr>
+                <td>Элементы высшей математики</td>
+                <td>Кононова М.П.</td>
+                <td>39</td>
+                <td>15:25</td>
+            </tr>
+            <tr>
+                <td colspan="4">Пятница 25.06.2021</td>
+            </tr>
+            <tr>
+                <td>Элементы высшей математики</td>
+                <td>Кононова М.П.</td>
+                <td>39</td>
+                <td>11:00</td>
+            </tr>
+            <tr>
+                <td>Физкультура</td>
+                <td>Досужая С.А, Подзолко Е.В.</td>
+                <td>42</td>
+                <td>12:25</td>
+            </tr>
+            <tr>
+                <td>Экономика организации</td>
+                <td>Емелина Т.Л.</td>
+                <td>39</td>
+                <td>14:00</td>
+            </tr>
+        </table>
+<script>
+    var tds = document.querySelectorAll('td');
+
+for (var i = 0; i < tds.length; i++) {
+	tds[i].addEventListener('click', function func() {
+		var input = document.createElement('input');
+		input.value = this.innerHTML;
+		this.innerHTML = '';
+		this.appendChild(input);
+		
+		var td = this;
+		input.addEventListener('blur', function() {
+			td.innerHTML = this.value;
+			td.addEventListener('click', func);
+		});
+		
+		this.removeEventListener('click', func);
+	});
+}
+</script>
+
